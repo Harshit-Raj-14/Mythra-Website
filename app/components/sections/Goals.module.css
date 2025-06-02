@@ -1,0 +1,645 @@
+/* Goals.module.css */
+
+.goals {
+  position: relative;
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+.content {
+  display: grid;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+}
+
+/* Left Content - Illustration */
+.leftContent {
+  position: relative;
+  order: 2;
+}
+
+@media (min-width: 1024px) {
+  .leftContent {
+    order: 1;
+  }
+}
+
+.illustrationContainer {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Race Track */
+.raceTrack {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  transform: perspective(500px) rotateX(10deg);
+  transform-origin: bottom;
+}
+
+.trackLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    #64748b 0px,
+    #64748b 20px,
+    transparent 20px,
+    transparent 40px
+  );
+}
+
+.trackLine:nth-child(1) { bottom: 60%; }
+.trackLine:nth-child(2) { bottom: 40%; }
+.trackLine:nth-child(3) { bottom: 20%; }
+
+/* Finish Flag */
+.finishFlag {
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  z-index: 5;
+}
+
+.flagPole {
+  width: 3px;
+  height: 80px;
+  background: #374151;
+  position: relative;
+}
+
+.flag {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  width: 40px;
+  height: 30px;
+  background: white;
+  border-radius: 0 4px 4px 0;
+  overflow: hidden;
+  animation: flagWave 2s ease-in-out infinite;
+}
+
+.flagPattern {
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    #000 0deg 45deg,
+    #fff 45deg 90deg
+  );
+  background-size: 10px 10px;
+}
+
+/* Runner Character */
+.runner {
+  position: absolute;
+  bottom: 25%;
+  left: 20%;
+  z-index: 6;
+  transform: scale(1.2);
+}
+
+.runnerAnimation {
+  animation: runnerMove 3s ease-in-out infinite;
+}
+
+.runnerBody {
+  position: relative;
+  width: 60px;
+  height: 80px;
+}
+
+.runnerHead {
+  width: 20px;
+  height: 20px;
+  background: #fbbf24;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.runnerTorso {
+  width: 25px;
+  height: 35px;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  border-radius: 12px;
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.runnerArms {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.runnerArm {
+  width: 3px;
+  height: 20px;
+  background: #fbbf24;
+  border-radius: 2px;
+  position: absolute;
+}
+
+.runnerArm:first-child {
+  left: -15px;
+  transform: rotate(-30deg);
+  animation: armSwing1 1s ease-in-out infinite alternate;
+}
+
+.runnerArm:last-child {
+  right: -15px;
+  transform: rotate(30deg);
+  animation: armSwing2 1s ease-in-out infinite alternate;
+}
+
+.runnerLegs {
+  position: absolute;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.runnerLeg {
+  width: 4px;
+  height: 25px;
+  background: #3b82f6;
+  border-radius: 2px;
+  position: absolute;
+}
+
+.runnerLeg:first-child {
+  left: -8px;
+  animation: legMove1 0.8s ease-in-out infinite alternate;
+}
+
+.runnerLeg:last-child {
+  right: -8px;
+  animation: legMove2 0.8s ease-in-out infinite alternate;
+}
+
+/* Megaphone */
+.megaphone {
+  position: absolute;
+  top: 15px;
+  right: -25px;
+  z-index: 7;
+}
+
+.megaphoneBase {
+  width: 15px;
+  height: 8px;
+  background: #ef4444;
+  border-radius: 0 8px 8px 0;
+}
+
+.megaphoneTop {
+  width: 20px;
+  height: 12px;
+  background: #dc2626;
+  border-radius: 0 12px 12px 0;
+  margin-top: -2px;
+}
+
+/* Geometric Shapes */
+.geometricShapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+}
+
+.triangle1 {
+  top: 10%;
+  left: 10%;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid #f59e0b;
+  opacity: 0.7;
+  animation: float 4s ease-in-out infinite;
+}
+
+.triangle2 {
+  bottom: 15%;
+  right: 20%;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 20px solid #ec4899;
+  opacity: 0.6;
+  animation: float 6s ease-in-out infinite reverse;
+}
+
+.circle1 {
+  top: 20%;
+  right: 10%;
+  width: 20px;
+  height: 20px;
+  background: #10b981;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: bounce 3s ease-in-out infinite;
+}
+
+.rectangle1 {
+  bottom: 30%;
+  left: 5%;
+  width: 25px;
+  height: 15px;
+  background: #6366f1;
+  border-radius: 4px;
+  opacity: 0.6;
+  animation: float 5s ease-in-out infinite;
+}
+
+.diamond1 {
+  top: 50%;
+  left: 15%;
+  width: 16px;
+  height: 16px;
+  background: #f59e0b;
+  transform: rotate(45deg);
+  opacity: 0.7;
+  animation: spin 8s linear infinite;
+}
+
+/* Floating Elements */
+.floatingElements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.floatingElement {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: float 4s ease-in-out infinite;
+}
+
+.element1 {
+  top: 15%;
+  left: 70%;
+  animation-delay: 0s;
+}
+
+.element2 {
+  top: 60%;
+  left: 80%;
+  animation-delay: 1s;
+}
+
+.element3 {
+  bottom: 20%;
+  left: 60%;
+  animation-delay: 2s;
+}
+
+.element4 {
+  top: 40%;
+  right: 30%;
+  animation-delay: 1.5s;
+}
+
+/* Right Content - Goals */
+.rightContent {
+  order: 1;
+}
+
+@media (min-width: 1024px) {
+  .rightContent {
+    order: 2;
+  }
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 32rem;
+}
+
+/* Goals List */
+.goalsList {
+  margin-bottom: 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .goalsList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.goalItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateX(30px);
+  border-left: 4px solid transparent;
+  height: fit-content;
+}
+
+.goalItem:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.goalVisible {
+  opacity: 1;
+  transform: translateX(0);
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+/* Goal Colors */
+.goalcyan { border-left-color: #06b6d4; }
+.goalblue { border-left-color: #3b82f6; }
+.goalgreen { border-left-color: #10b981; }
+.goalred { border-left-color: #ef4444; }
+
+.goalcyan .goalIcon { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+.goalblue .goalIcon { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.goalgreen .goalIcon { background: linear-gradient(135deg, #10b981, #059669); }
+.goalred .goalIcon { background: linear-gradient(135deg, #ef4444, #dc2626); }
+
+.goalIcon {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.5rem;
+}
+
+.goalContent {
+  flex: 1;
+}
+
+.goalTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.goalDescription {
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* CTA Section */
+.ctaSection {
+  margin-top: 2rem;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.ctaButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.ctaIcon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.ctaButton:hover .ctaIcon {
+  transform: translateX(3px);
+}
+
+/* Background Elements */
+.backgroundElements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bgShape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.05;
+}
+
+.bgShape1 {
+  top: 10%;
+  right: 5%;
+  width: 6rem;
+  height: 6rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  animation: float 8s ease-in-out infinite;
+}
+
+.bgShape2 {
+  bottom: 20%;
+  left: 10%;
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  animation: float 6s ease-in-out infinite reverse;
+}
+
+.bgShape3 {
+  top: 50%;
+  right: 15%;
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  animation: float 10s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes runnerMove {
+  0%, 100% {
+    transform: translateX(0) scale(1.2);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+}
+
+@keyframes armSwing1 {
+  0% { transform: rotate(-30deg); }
+  100% { transform: rotate(-10deg); }
+}
+
+@keyframes armSwing2 {
+  0% { transform: rotate(30deg); }
+  100% { transform: rotate(10deg); }
+}
+
+@keyframes legMove1 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(20deg); }
+}
+
+@keyframes legMove2 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-20deg); }
+}
+
+@keyframes flagWave {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(0.9); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(45deg); }
+  to { transform: rotate(405deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .goals {
+    padding: 4rem 0;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .goalsList {
+    grid-template-columns: 1fr;
+  }
+  
+  .goalItem {
+    padding: 1rem;
+  }
+  
+  .goalIcon {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+  }
+  
+  .illustrationContainer {
+    height: 300px;
+  }
+}

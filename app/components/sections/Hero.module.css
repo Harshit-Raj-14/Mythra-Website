@@ -1,0 +1,528 @@
+/* Hero.module.css */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Background Styles */
+.background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1e3a8a, #7c3aed, #4338ca);
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+.shape1 {
+  top: 5rem;
+  left: 2.5rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: #3b82f6;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.shape2 {
+  top: 10rem;
+  right: 5rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: #8b5cf6;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.shape3 {
+  bottom: 10rem;
+  left: 5rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #4338ca;
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.shape4 {
+  bottom: 5rem;
+  right: 10rem;
+  width: 6rem;
+  height: 6rem;
+  background-color: #06b6d4;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.1;
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(30, 58, 138, 0.5), transparent);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+.heroContent {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .heroContent {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Left Content Styles */
+.leftContent {
+  color: white;
+  animation: slideUp 0.8s ease-out;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 2rem;
+}
+
+.checkIcon {
+  color: #22c55e;
+  margin-right: 0.5rem;
+}
+
+.badgeText {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.headingSection {
+  margin-bottom: 2rem;
+}
+
+.mainHeading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .mainHeading {
+    font-size: 3.75rem;
+  }
+}
+
+.gradientText {
+  display: block;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.subHeading {
+  font-size: 1.25rem;
+  color: #bfdbfe;
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .subHeading {
+    font-size: 1.5rem;
+  }
+}
+
+.description {
+  font-size: 1.125rem;
+  color: #d1d5db;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 36rem;
+}
+
+/* Service Rotation */
+.serviceRotation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.rotationLabel {
+  color: #d1d5db;
+}
+
+.rotationContainer {
+  position: relative;
+  min-width: 9.375rem;
+  height: 2rem;
+}
+
+.serviceItem {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.serviceItem.serviceActive {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.serviceIcon {
+  font-size: 1.25rem;
+}
+
+.serviceText {
+  color: white;
+  font-weight: 500;
+}
+
+/* CTA Buttons */
+.ctaSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .ctaSection {
+    flex-direction: row;
+  }
+}
+
+.primaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #2563eb, #8b5cf6);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.primaryButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.arrowIcon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.primaryButton:hover .arrowIcon {
+  transform: translateX(0.25rem);
+}
+
+.secondaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease-in-out;
+}
+
+.secondaryButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.playIcon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.secondaryButton:hover .playIcon {
+  transform: scale(1.1);
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  padding-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .statNumber {
+    font-size: 1.875rem;
+  }
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: #d1d5db;
+}
+
+/* Right Content - Visual Elements */
+.rightContent {
+  position: relative;
+}
+
+.visualContainer {
+  position: relative;
+  width: 100%;
+  height: 31.25rem;
+}
+
+@media (min-width: 768px) {
+  .visualContainer {
+    height: 37.5rem;
+  }
+}
+
+/* Floating Cards */
+.floatingCard {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+.card1 {
+  top: 2.5rem;
+  left: 2.5rem;
+}
+
+.card2 {
+  top: 8rem;
+  right: 2.5rem;
+  animation-delay: 1s;
+}
+
+.card3 {
+  bottom: 8rem;
+  left: 4rem;
+  animation-delay: 2s;
+}
+
+.card4 {
+  bottom: 2.5rem;
+  right: 5rem;
+  animation-delay: 1.5s;
+}
+
+.cardIcon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.cardTitle {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.cardText {
+  color: #d1d5db;
+  font-size: 0.875rem;
+}
+
+/* Central Element */
+.centralElement {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centralCircle {
+  width: 8rem;
+  height: 8rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 3s ease-in-out infinite;
+  position: relative;
+}
+
+.centralCircle::before {
+  content: '';
+  position: absolute;
+  inset: 0.75rem;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.centralText {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #2563eb, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+/* Connecting Lines */
+.connectingLines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.animatedPath {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scrollMouse {
+  width: 1.5rem;
+  height: 2.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+.scrollWheel {
+  width: 0.25rem;
+  height: 0.75rem;
+  background-color: white;
+  border-radius: 9999px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
