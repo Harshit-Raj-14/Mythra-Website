@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from './Hero.module.css'
 
 const Hero = () => {
@@ -10,8 +11,8 @@ const Hero = () => {
   const services = [
     { icon: '💻', text: 'Web Development' },
     { icon: '📱', text: 'Mobile Apps' },
-    { icon: '☁️', text: 'Cloud Solutions' },
-    { icon: '🧠', text: 'AI & ML' }
+    { icon: '☁️', text: 'Graphic Design' },
+    { icon: '🧠', text: 'Content Writing' }
   ]
 
   const stats = [
@@ -49,14 +50,6 @@ const Hero = () => {
         <div className={styles.heroContent}>
           {/* Left Content */}
           <div className={styles.leftContent}>
-            {/* Badge */}
-            {/* <div className={styles.badge}>
-              <svg className={styles.checkIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M9 12l2 2 4-4"/>
-                <circle cx="12" cy="12" r="10"/>
-              </svg>
-              <span className={styles.badgeText}>Trusted by 50+ Global Clients</span>
-            </div> */}
 
             {/* Main Heading */}
             <div className={styles.headingSection}>
@@ -76,24 +69,6 @@ const Hero = () => {
               At Mythra Global Technologies, we craft innovative digital solutions that propel your business into the future. From web development to AI integration, we're your trusted technology partner.
             </p>
 
-            {/* Service Rotation */}
-            {/* <div className={styles.serviceRotation}>
-              <span className={styles.rotationLabel}>Specialized in:</span>
-              <div className={styles.rotationContainer}>
-                {services.map((service, index) => (
-                  <div
-                    key={index}
-                    className={`${styles.serviceItem} ${
-                      index === currentSlide ? styles.serviceActive : ''
-                    }`}
-                  >
-                    <span className={styles.serviceIcon}>{service.icon}</span>
-                    <span className={styles.serviceText}>{service.text}</span>
-                  </div>
-                ))}
-              </div>
-            </div> */}
-
             {/* CTA Buttons */}
             <div className={styles.ctaSection}>
               <Link href="/contact" className={styles.primaryButton}>
@@ -104,8 +79,10 @@ const Hero = () => {
               </Link>
               
               <button className={styles.secondaryButton}>
-                <svg className={styles.playIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polygon points="6,3 20,12 6,21"/>
+                <svg className={styles.downloadIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7,10 12,15 17,10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
                 </svg>
                 <span>Download Brochure</span>
               </button>
@@ -157,7 +134,13 @@ const Hero = () => {
               {/* Central Element */}
               <div className={styles.centralElement}>
                 <div className={styles.centralCircle}>
-                  <span className={styles.centralText}>MGT</span>
+                  <Image
+                    src="/logo.png"
+                    alt="Company Logo"
+                    width={80}
+                    height={80}
+                    className={styles.centralLogo}
+                  />
                 </div>
               </div>
 
