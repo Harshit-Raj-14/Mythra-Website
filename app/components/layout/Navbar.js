@@ -25,21 +25,41 @@ const Navbar = () => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown)
   }
 
+    //for seperate pages link
+  // const navItems = [
+  //   { name: 'Home', href: '/' },
+  //   { 
+  //     name: 'Services', 
+  //     href: '/services',
+  //     dropdown: [
+  //       { name: 'Web Development', href: '/services/web-development' },
+  //       { name: 'Mobile Apps', href: '/services/mobile-apps' },
+  //       { name: 'Cloud Solutions', href: '/services/cloud-solutions' },
+  //       { name: 'AI & Machine Learning', href: '/services/ai-ml' }
+  //     ]
+  //   },
+  //   { name: 'Projects', href: '/projects' },
+  //   { name: 'About', href: '/about' },
+  //   { name: 'Contact', href: '/contact' }
+  // ]
+
+  //for navigating to the same section on homepage
   const navItems = [
-    { name: 'Home', href: '/' },
+    { name: 'Home', href: '#hero' },
     { 
       name: 'Services', 
-      href: '/services',
+      href: '#services',
       dropdown: [
-        { name: 'Web Development', href: '/services/web-development' },
-        { name: 'Mobile Apps', href: '/services/mobile-apps' },
-        { name: 'Cloud Solutions', href: '/services/cloud-solutions' },
-        { name: 'AI & Machine Learning', href: '/services/ai-ml' }
+        { name: 'Web Development', href: '#services' },
+        { name: 'Mobile Apps', href: '#services' },
+        { name: 'Cloud Solutions', href: '#services' },
+        { name: 'AI & Machine Learning', href: '#services' }
       ]
     },
-    { name: 'Projects', href: '/projects' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'About', href: '#goals-section' },
+    { name: 'Portfolio', href: '#portfolio-section' },
+    { name: 'Testimonials', href: '#testimonials-section' },
+    { name: 'Contact', href: '#contact' }
   ]
 
   return (
@@ -103,7 +123,7 @@ const Navbar = () => {
             ))}
             
             {/* CTA Button */}
-            <Link href="/contact" className={styles.ctaButton}>
+            <Link href="#contact" className={styles.ctaButton}>
               Get Started
             </Link>
           </div>

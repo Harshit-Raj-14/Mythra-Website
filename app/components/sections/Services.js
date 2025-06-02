@@ -120,7 +120,7 @@ const Services = () => {
   }
 
   return (
-    <section className={styles.services}>
+    <section id="services" className={styles.services}>
       {/* Background Elements */}
       <div className={styles.background}>
         <div className={`${styles.shape} ${styles.shape1}`}></div>

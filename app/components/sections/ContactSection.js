@@ -48,7 +48,7 @@ const ContactSection = () => {
   }
 
   return (
-    <section className={styles.contactSection}>
+    <section id="contact" className={styles.contactSection}>
       {/* Background Elements */}
       <div className={styles.background}>
         <div className={`${styles.shape} ${styles.shape1}`}></div>
@@ -62,19 +62,22 @@ const ContactSection = () => {
           <div className={styles.badge}>
             <span className={styles.badgeText}>📞 CONTACT US</span>
           </div>
-          <h2 className={styles.title}>
-            Your Ideas, Our Expertise —<br />
-            Let's Connect with Our Experts
-          </h2>
-          <p className={styles.subtitle}>
-            Have a project in mind? Let's build something amazing together!<br />
-            Fill out the form below, and our team will get back to you soon. 🚀
-          </p>
         </div>
 
         <div className={styles.contactContent}>
-          {/* Left Side - Contact Information */}
+          {/* Left Side - Contact Information & Heading */}
           <div className={styles.contactInfo}>
+            <div className={styles.leftContent}>
+              <h2 className={styles.title}>
+                Your Ideas, Our Expertise —<br />
+                Let's Connect with Our Experts
+              </h2>
+              <p className={styles.subtitle}>
+                Have a project in mind? Let's build something amazing together!<br />
+                Fill out the form below, and our team will get back to you soon. 🚀
+              </p>
+            </div>
+
             <div className={styles.contactCard}>
               <div className={styles.contactItem}>
                 <div className={styles.contactIcon}>
