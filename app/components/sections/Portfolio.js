@@ -19,7 +19,7 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Pharmaceuticals Inventory Management System",
       subtitle: "Modern Online Store",
       description: "A complete e-commerce solution with advanced features including payment integration, inventory management, and responsive design.",
       category: "WEB_DEVELOPMENT",
@@ -55,7 +55,7 @@ const Portfolio = () => {
     },
     {
       id: 4,
-      title: "Hospital Management System",
+      title: "School Management System",
       subtitle: "Healthcare Solution",
       description: "Comprehensive hospital management web application with patient records, appointment scheduling, and staff management features.",
       category: "WEB_DEVELOPMENT",
@@ -67,18 +67,6 @@ const Portfolio = () => {
     },
     {
       id: 5,
-      title: "Food Delivery App",
-      subtitle: "On-Demand Delivery",
-      description: "Feature-rich food delivery mobile application with real-time tracking, multiple payment options, and restaurant management.",
-      category: "MOBILE_APPS",
-      image: "/images/projects/food-delivery.jpg",
-      gradient: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
-      tags: ["Flutter", "Firebase", "Google Maps"],
-      client: "QuickEats",
-      year: "2023"
-    },
-    {
-      id: 6,
       title: "Social Media Campaign",
       subtitle: "Digital Marketing Assets",
       description: "Creative social media graphics and promotional materials for a product launch campaign across multiple platforms.",
@@ -89,42 +77,6 @@ const Portfolio = () => {
       client: "BrandBoost Agency",
       year: "2024"
     },
-    {
-      id: 7,
-      title: "Real Estate Platform",
-      subtitle: "Property Management",
-      description: "Advanced real estate platform with property listings, virtual tours, agent profiles, and integrated CRM system.",
-      category: "WEB_DEVELOPMENT",
-      image: "/images/projects/real-estate.jpg",
-      gradient: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
-      tags: ["Angular", "Express", "PostgreSQL"],
-      client: "PropertyPro",
-      year: "2023"
-    },
-    {
-      id: 8,
-      title: "Fitness Tracking App",
-      subtitle: "Health & Wellness",
-      description: "Comprehensive fitness application with workout plans, nutrition tracking, progress analytics, and social features.",
-      category: "MOBILE_APPS",
-      image: "/images/projects/fitness-app.jpg",
-      gradient: "linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)",
-      tags: ["React Native", "HealthKit", "Analytics"],
-      client: "FitLife Studios",
-      year: "2024"
-    },
-    {
-      id: 9,
-      title: "Corporate Brochure Design",
-      subtitle: "Print & Digital Assets",
-      description: "Professional corporate brochure design with modern layout, infographics, and consistent brand messaging.",
-      category: "GRAPHIC_DESIGN",
-      image: "/images/projects/corporate-brochure.jpg",
-      gradient: "linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)",
-      tags: ["InDesign", "Print Design", "Corporate"],
-      client: "GlobalTech Corp",
-      year: "2023"
-    }
   ]
 
   useEffect(() => {
@@ -255,7 +207,7 @@ const Portfolio = () => {
         </div>
 
         {/* Load More Section */}
-        <div className={styles.loadMoreSection}>
+        {/* <div className={styles.loadMoreSection}>
           <p className={styles.loadMoreText}>
             Want to see more of our work?
           </p>
@@ -265,7 +217,7 @@ const Portfolio = () => {
               <path d="m9 18 6-6-6-6"/>
             </svg>
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   )

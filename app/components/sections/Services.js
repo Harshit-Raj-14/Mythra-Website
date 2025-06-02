@@ -97,21 +97,6 @@ const Services = () => {
         "Brand Awareness"
       ],
       color: "red"
-    },
-    {
-      id: 7,
-      title: "Media Marketing",
-      subtitle: "Direct Engagement",
-      description: "Connect directly with your customers through targeted media marketing. From WhatsApp to email campaigns, we help you reach your audience effectively.",
-      icon: "📧",
-      features: [
-        "WhatsApp Marketing",
-        "Email Campaigns",
-        "SMS Marketing",
-        "Direct Outreach",
-        "Customer Engagement"
-      ],
-      color: "indigo"
     }
   ]
 
@@ -177,7 +162,7 @@ const Services = () => {
               </div>
               
               <div className={styles.cardFooter}>
-                <Link href="/contact" className={styles.serviceButton}>
+                <Link href="#contact" className={styles.serviceButton}>
                   Get Started
                   <svg className={styles.buttonIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="m9 18 6-6-6-6"/>
@@ -199,10 +184,10 @@ const Services = () => {
               Our team is ready to bring your vision to life.
             </p>
             <div className={styles.ctaButtons}>
-              <Link href="/contact" className={styles.primaryCta}>
+              <Link href="#contact" className={styles.primaryCta}>
                 Start Your Project
               </Link>
-              <Link href="/projects" className={styles.secondaryCta}>
+              <Link href="#portfolio-section" className={styles.secondaryCta}>
                 View Our Work
               </Link>
             </div>
@@ -219,7 +204,7 @@ const Services = () => {
               <div className={styles.statLabel}>Happy Clients</div>
             </div>
             <div className={styles.stat}>
-              <div className={styles.statNumber}>7</div>
+              <div className={styles.statNumber}>12+</div>
               <div className={styles.statLabel}>Services Offered</div>
             </div>
             <div className={styles.stat}>

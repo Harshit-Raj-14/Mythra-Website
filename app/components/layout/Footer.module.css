@@ -110,11 +110,26 @@
   width: 3rem;
   height: 3rem;
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  border-radius: 0.75rem;
+  border-radius: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid #a855f7; 
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
 }
+
+.logoIcon:hover {
+  box-shadow: 0 0 12px 4px rgba(168, 85, 247, 0.8);
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22%; 
+}
+
 
 .logoText {
   color: white;

@@ -52,8 +52,7 @@ const Navbar = () => {
       dropdown: [
         { name: 'Web Development', href: '#services' },
         { name: 'Mobile Apps', href: '#services' },
-        { name: 'Cloud Solutions', href: '#services' },
-        { name: 'AI & Machine Learning', href: '#services' }
+        { name: 'Digital Marketing', href: '#services' }
       ]
     },
     { name: 'About', href: '#goals-section' },
@@ -73,7 +72,7 @@ const Navbar = () => {
             </div>
             <div className={styles.logoContent}>
               <span className={`${styles.companyName} ${isScrolled ? styles.scrolledText : ''}`}>
-                Myhra Global
+                Mythra Global
               </span>
               <span className={`${styles.tagline} ${isScrolled ? styles.scrolledTagline : ''}`}>
                 Technologies
@@ -124,7 +123,7 @@ const Navbar = () => {
             
             {/* CTA Button */}
             <Link href="#contact" className={styles.ctaButton}>
-              Get Started
+              Appointment
             </Link>
           </div>
 

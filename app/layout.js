@@ -7,8 +7,8 @@ import Footer from './components/layout/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Myhra Global Technologies - Leading Tech Solutions',
-  description: 'Transform your business with cutting-edge technology solutions from Myhra Global Technologies.',
+  title: 'Mythra Global Technologies - Leading Tech Solutions',
+  description: 'Transform your business with cutting-edge technology solutions from Mythra Global Technologies.',
 }
 
 export default function RootLayout({ children }) {

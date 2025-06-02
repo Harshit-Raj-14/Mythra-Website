@@ -62,9 +62,25 @@ const Goals = () => {
   return (
     <section id="goals-section" className={styles.goals}>
       <div className={styles.container}>
+        <div className={styles.header}>
+            <div className={styles.badge}>
+              <span className={styles.badgeText}>🎯 Our Mission</span>
+            </div>
+        </div>
         <div className={styles.content}>
           {/* Left Content - Illustration */}
           <div className={styles.leftContent}>
+            <div className={styles.header}>
+              {/* <div className={styles.badge}>
+                <span className={styles.badgeText}>🎯 Our Mission</span>
+              </div> */}
+              <h2 className={styles.title}>
+                Reasons To Count On Us
+              </h2>
+              <p className={styles.subtitle}>
+                We are goal-driven in converting innovative ideas into real-life business solutions that drive success and growth.
+              </p>
+            </div>
             <div className={styles.illustrationContainer}>
               {/* Main Illustration Elements */}
               <div className={styles.raceTrack}>
@@ -122,18 +138,6 @@ const Goals = () => {
 
           {/* Right Content - Goals List */}
           <div className={styles.rightContent}>
-            <div className={styles.header}>
-              <div className={styles.badge}>
-                <span className={styles.badgeText}>🎯 Our Mission</span>
-              </div>
-              <h2 className={styles.title}>
-                Reasons To Count On Us
-              </h2>
-              <p className={styles.subtitle}>
-                We are goal-driven in converting innovative ideas into real-life business solutions that drive success and growth.
-              </p>
-            </div>
-
             <div className={styles.goalsList}>
               {goals.map((goal, index) => (
                 <div
@@ -155,14 +159,14 @@ const Goals = () => {
             </div>
 
             {/* CTA Button */}
-            <div className={styles.ctaSection}>
+            {/* <div className={styles.ctaSection}>
               <a href="/about" className={styles.ctaButton}>
                 Learn More About Us
                 <svg className={styles.ctaIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="m9 18 6-6-6-6"/>
                 </svg>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

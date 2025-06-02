@@ -10,16 +10,16 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Rajesh Kumar",
-      title: "CEO, TechStart Solutions",
+      name: "Pradeep Kumar Aggarwal",
+      title: "Business Owner, Kanha Enterprises",
       image: "/images/testimonials/rajesh-kumar.jpg",
-      quote: "Myhra Global Technologies transformed our digital presence completely. Their web development team created an outstanding e-commerce platform that increased our sales by 300%. Professional, reliable, and innovative!",
+      quote: "Mythra Global Technologies transformed our digital presence completely. Their web development team created an outstanding e-commerce platform that increased our sales by 300%. Professional, reliable, and innovative!",
       rating: 5
     },
     {
       id: 2,
       name: "Priya Sharma",
-      title: "Founder, Creative Studio",
+      title: "Baranwal Ekta Sanstha, Mumbai",
       image: "/images/testimonials/priya-sharma.jpg",
       quote: "The graphic design work they delivered was beyond our expectations. From our brand identity to marketing materials, everything was crafted with attention to detail. Highly recommend their creative services!",
       rating: 5
@@ -30,30 +30,6 @@ const Testimonials = () => {
       title: "Director, HealthCare Plus",
       image: "/images/testimonials/amit-patel.jpg",
       quote: "Our mobile app project was delivered on time and within budget. The team's expertise in React Native helped us launch across both iOS and Android platforms simultaneously. Excellent communication throughout!",
-      rating: 5
-    },
-    {
-      id: 4,
-      name: "Sarah Johnson",
-      title: "Marketing Head, GlobalTech",
-      image: "/images/testimonials/sarah-johnson.jpg",
-      quote: "Their digital marketing strategies helped us reach our target audience effectively. Our social media engagement increased by 400% and lead generation improved significantly. True professionals!",
-      rating: 5
-    },
-    {
-      id: 5,
-      name: "Michael Chen",
-      title: "CTO, FinanceFlow",
-      image: "/images/testimonials/michael-chen.jpg",
-      quote: "The software solution they developed streamlined our entire workflow. Clean code, robust architecture, and seamless integration with our existing systems. Couldn't be happier with the results!",
-      rating: 5
-    },
-    {
-      id: 6,
-      name: "Anjali Desai",
-      title: "Owner, FoodieDelight",
-      image: "/images/testimonials/anjali-desai.jpg",
-      quote: "From concept to launch, they handled our food delivery app project brilliantly. The user interface is intuitive and the backend is solid. Our customers love the app experience!",
       rating: 5
     }
   ]
@@ -189,7 +165,7 @@ const Testimonials = () => {
         {/* Navigation */}
         <div className={styles.navigation}>
           {/* Navigation Dots */}
-          <div className={styles.navigationDots}>
+          {/* <div className={styles.navigationDots}>
             {[...Array(totalSlides)].map((_, index) => (
               <button
                 key={index}
@@ -199,7 +175,7 @@ const Testimonials = () => {
                 }`}
               />
             ))}
-          </div>
+          </div> */}
 
           {/* Arrow Navigation */}
           <div className={styles.arrowNavigation}>

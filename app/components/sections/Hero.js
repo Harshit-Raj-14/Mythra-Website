@@ -73,7 +73,7 @@ const Hero = () => {
 
             {/* Description */}
             <p className={styles.description}>
-              At Myhra Global Technologies, we craft innovative digital solutions that propel your business into the future. From web development to AI integration, we're your trusted technology partner.
+              At Mythra Global Technologies, we craft innovative digital solutions that propel your business into the future. From web development to AI integration, we're your trusted technology partner.
             </p>
 
             {/* Service Rotation */}

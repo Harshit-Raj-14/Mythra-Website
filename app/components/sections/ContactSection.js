@@ -17,11 +17,9 @@ const ContactSection = () => {
     'Custom Website Development',
     'E-Commerce Development',
     'Mobile App Development',
-    'Software Development for Startups',
+    'Software Development for Schools, businesses, etc.',
     'Business Automation Solutions',
-    'IT Solutions Consulting',
-    'Graphic Design Services',
-    'Digital Marketing Solutions'
+    'Graphic Design Services'
   ]
 
   const handleInputChange = (e) => {
@@ -77,7 +75,7 @@ const ContactSection = () => {
                 Fill out the form below, and our team will get back to you soon. 🚀
               </p>
             </div>
-
+            <br></br>
             <div className={styles.contactCard}>
               <div className={styles.contactItem}>
                 <div className={styles.contactIcon}>
@@ -87,7 +85,8 @@ const ContactSection = () => {
                 </div>
                 <div className={styles.contactContent}>
                   <h3 className={styles.contactTitle}>Dial & Connect</h3>
-                  <p className={styles.contactText}>+91 96692 31006 | +91 94790 47655</p>
+                  <p className={styles.contactText}>+91 7856008381 |
+                    <br></br>+91 6202275294</p>
                 </div>
               </div>
 
@@ -100,11 +99,12 @@ const ContactSection = () => {
                 </div>
                 <div className={styles.contactContent}>
                   <h3 className={styles.contactTitle}>Send Queries</h3>
-                  <p className={styles.contactText}>info@myhraglobal.com | projects@myhraglobal.com</p>
+                  <p className={styles.contactText}>mythra.global@gmail.com |
+                    <br></br>priyanshu.mythra@gmail.com</p>
                 </div>
               </div>
 
-              <div className={styles.contactItem}>
+              {/* <div className={styles.contactItem}>
                 <div className={styles.contactIcon}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
@@ -118,7 +118,7 @@ const ContactSection = () => {
                     Business Hub - 800001
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
