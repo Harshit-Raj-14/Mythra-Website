@@ -71,8 +71,8 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className={styles.ctaSection}>
-              <Link href="/contact" className={styles.primaryButton}>
-                <span>Start Your Project</span>
+              <Link href="#contact" className={styles.primaryButton}>
+                <span>Get in Touch</span>
                 <svg className={styles.arrowIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="m9 18 6-6-6-6"/>
                 </svg>
@@ -108,27 +108,27 @@ const Hero = () => {
             <div className={styles.visualContainer}>
               {/* Floating Cards */}
               <div className={`${styles.floatingCard} ${styles.card1}`}>
-                <div className={styles.cardIcon}>💻</div>
-                <h3 className={styles.cardTitle}>Clean Code</h3>
-                <p className={styles.cardText}>Scalable & Maintainable</p>
+                <div className={styles.cardIcon}>🛡️</div>
+                <h3 className={styles.cardTitle}>Trusted Partner</h3>
+                <p className={styles.cardText}>5+ Years of Excellence</p>
               </div>
 
               <div className={`${styles.floatingCard} ${styles.card2}`}>
-                <div className={styles.cardIcon}>📱</div>
-                <h3 className={styles.cardTitle}>Mobile First</h3>
-                <p className={styles.cardText}>Responsive Design</p>
+                <div className={styles.cardIcon}>⚡</div>
+                <h3 className={styles.cardTitle}>Fast Delivery</h3>
+                <p className={styles.cardText}>On-Time, Every Time</p>
               </div>
 
               <div className={`${styles.floatingCard} ${styles.card3}`}>
-                <div className={styles.cardIcon}>☁️</div>
-                <h3 className={styles.cardTitle}>Cloud Ready</h3>
-                <p className={styles.cardText}>Scalable Infrastructure</p>
+                <div className={styles.cardIcon}>💰</div>
+                <h3 className={styles.cardTitle}>Cost Effective</h3>
+                <p className={styles.cardText}>Best Value for Money</p>
               </div>
 
               <div className={`${styles.floatingCard} ${styles.card4}`}>
-                <div className={styles.cardIcon}>🧠</div>
-                <h3 className={styles.cardTitle}>AI Powered</h3>
-                <p className={styles.cardText}>Intelligent Solutions</p>
+                <div className={styles.cardIcon}>🎯</div>
+                <h3 className={styles.cardTitle}>Results Driven</h3>
+                <p className={styles.cardText}>Your Success is Our Goal</p>
               </div>
 
               {/* Central Element */}
@@ -137,8 +137,8 @@ const Hero = () => {
                   <Image
                     src="/logo.png"
                     alt="Company Logo"
-                    width={80}
-                    height={80}
+                    width={60}
+                    height={60}
                     className={styles.centralLogo}
                   />
                 </div>

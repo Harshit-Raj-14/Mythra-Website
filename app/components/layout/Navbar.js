@@ -121,10 +121,12 @@ const Navbar = () => {
               </div>
             ))}
             
-            {/* CTA Button */}
-            <Link href="#contact" className={styles.ctaButton}>
-              Appointment
-            </Link>
+            {/* CTA Button with Rainbow Animation */}
+            <div className={styles.ctaButtonWrapper}>
+              <Link href="#contact" className={styles.ctaButton}>
+                <span className={styles.ctaButtonText}>Appointment</span>
+              </Link>
+            </div>
           </div>
 
           {/* Mobile menu button */}

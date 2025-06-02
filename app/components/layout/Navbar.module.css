@@ -192,8 +192,41 @@
   color: #2563eb;
 }
 
-/* CTA Button */
+/* Rainbow Animated CTA Button */
+@keyframes rainbow-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.ctaButtonWrapper {
+  position: relative;
+  padding: 3px;
+  border-radius: 0.625rem;
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff8000,
+    #ffff00,
+    #80ff00,
+    #00ff80,
+    #0080ff,
+    #8000ff,
+    #ff0080,
+    #ff0000
+  );
+  background-size: 400% 400%;
+  animation: rainbow-border 3s ease-in-out infinite;
+}
+
 .ctaButton {
+  display: block;
   background: linear-gradient(135deg, #2563eb, #7c3aed);
   color: white;
   padding: 0.5rem 1.5rem;
@@ -201,12 +234,18 @@
   font-weight: 600;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
-  transform: scale(1);
+  position: relative;
+  z-index: 1;
 }
 
 .ctaButton:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.ctaButtonText {
+  position: relative;
+  z-index: 2;
 }
 
 /* Mobile Toggle */
@@ -327,6 +366,13 @@
 .mobileCtaButton:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide desktop CTA button on mobile */
+@media (max-width: 1023px) {
+  .ctaButtonWrapper {
+    display: none;
+  }
 }
 
 @media (min-width: 1024px) {
