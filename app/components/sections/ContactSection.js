@@ -13,6 +13,10 @@ const ContactSection = () => {
     services: []
   })
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
+
   const services = [
     'Custom Website Development',
     'E-Commerce Development',
@@ -22,12 +26,36 @@ const ContactSection = () => {
     'Graphic Design Services'
   ]
 
+  // Email validation function
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
+  }
+
+  // Phone validation function for 10 digits
+  const isValidPhone = (phone) => {
+    const phoneRegex = /^\d{10}$/
+    return phoneRegex.test(phone.replace(/\D/g, '')) // Remove non-digits and check if exactly 10 digits
+  }
+
   const handleInputChange = (e) => {
     const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
+    
+    // For phone input, only allow numbers and limit to 10 digits
+    if (name === 'phone') {
+      const numbersOnly = value.replace(/\D/g, '') // Remove all non-digit characters
+      if (numbersOnly.length <= 10) {
+        setFormData(prev => ({
+          ...prev,
+          [name]: numbersOnly
+        }))
+      }
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }))
+    }
   }
 
   const handleServiceChange = (service) => {
@@ -39,10 +67,120 @@ const ContactSection = () => {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Handle form submission here
+    setErrorMessage('')
+
+    // Validation
+    if (!formData.name.trim()) {
+      setErrorMessage('Please enter your name')
+      return
+    }
+
+    if (!formData.phone.trim()) {
+      setErrorMessage('Please enter your phone number')
+      return
+    }
+
+    if (!isValidPhone(formData.phone)) {
+      setErrorMessage('Please enter a valid 10-digit phone number')
+      return
+    }
+
+    if (!formData.email.trim()) {
+      setErrorMessage('Please enter your email address')
+      return
+    }
+
+    if (!isValidEmail(formData.email)) {
+      setErrorMessage('Please enter a valid email address')
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      // Prepare the email content
+      const selectedServices = formData.services.length > 0 
+        ? formData.services.join(', ') 
+        : 'No specific services selected'
+
+      const emailContent = `
+New Contact Form Submission from Mythra Global Website
+
+Contact Details:
+- Name: ${formData.name}
+- Phone: ${formData.phone}
+- Email: ${formData.email}
+- City: ${formData.city || 'Not provided'}
+
+Message/Remarks:
+${formData.message || 'No message provided'}
+
+Requested Services:
+${selectedServices}
+
+Submission Date: ${new Date().toLocaleString()}
+      `.trim()
+
+      // Create a hidden form and submit it directly to FormSubmit.co
+      const form = document.createElement('form')
+      form.action = 'https://formsubmit.co/mythra.global@gmail.com'
+      form.method = 'POST'
+      form.style.display = 'none'
+
+      // Add all form fields
+      const fields = {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        city: formData.city || 'Not provided',
+        message: emailContent,
+        subject: `New Contact Form Submission from ${formData.name}`,
+        _next: window.location.href,
+        _captcha: 'false',
+        _template: 'table'
+      }
+
+      Object.keys(fields).forEach(key => {
+        const input = document.createElement('input')
+        input.type = 'hidden'
+        input.name = key
+        input.value = fields[key]
+        form.appendChild(input)
+      })
+
+      // Add form to document, submit, then remove
+      document.body.appendChild(form)
+      
+      // Submit the form
+      form.submit()
+
+      // Since we can't wait for the response with this method,
+      // we'll assume success after a short delay
+      setTimeout(() => {
+        setIsSubmitted(true)
+        // Reset form
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          city: '',
+          message: '',
+          services: []
+        })
+        // Reset success message after 5 seconds
+        setTimeout(() => setIsSubmitted(false), 5000)
+        
+        // Remove the form
+        document.body.removeChild(form)
+      }, 1000)
+
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setErrorMessage('Failed to send message. Please try again later.')
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -147,6 +285,7 @@ const ContactSection = () => {
                       onChange={handleInputChange}
                       className={styles.formInput}
                       required
+                      disabled={isSubmitted}
                     />
                   </div>
 
@@ -159,11 +298,13 @@ const ContactSection = () => {
                     <input
                       type="tel"
                       name="phone"
-                      placeholder="Phone *"
+                      placeholder="Your Phone No.*"
                       value={formData.phone}
                       onChange={handleInputChange}
                       className={styles.formInput}
                       required
+                      disabled={isSubmitted}
+                      maxLength="10"
                     />
                   </div>
 
@@ -182,6 +323,7 @@ const ContactSection = () => {
                       onChange={handleInputChange}
                       className={styles.formInput}
                       required
+                      disabled={isSubmitted}
                     />
                   </div>
 
@@ -199,6 +341,7 @@ const ContactSection = () => {
                       value={formData.city}
                       onChange={handleInputChange}
                       className={styles.formInput}
+                      disabled={isSubmitted}
                     />
                   </div>
                 </div>
@@ -220,6 +363,7 @@ const ContactSection = () => {
                     onChange={handleInputChange}
                     className={styles.formTextarea}
                     rows={4}
+                    disabled={isSubmitted}
                   />
                 </div>
 
@@ -233,6 +377,7 @@ const ContactSection = () => {
                           checked={formData.services.includes(service)}
                           onChange={() => handleServiceChange(service)}
                           className={styles.serviceCheckbox}
+                          disabled={isSubmitted}
                         />
                         <span className={styles.serviceLabel}>{service}</span>
                       </label>
@@ -240,11 +385,66 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                <button type="submit" className={styles.submitButton}>
-                  Send Message
-                  <svg className={styles.submitIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="m9 18 6-6-6-6"/>
-                  </svg>
+                {/* Success Message */}
+                {isSubmitted && (
+                  <div style={{
+                    color: '#22c55e',
+                    fontSize: '16px',
+                    textAlign: 'center',
+                    marginBottom: '16px',
+                    padding: '12px',
+                    backgroundColor: '#dcfce7',
+                    borderRadius: '8px',
+                    border: '1px solid #22c55e'
+                  }}>
+                    ✓ Message sent successfully! We'll get back to you soon.
+                  </div>
+                )}
+
+                {/* Error Message */}
+                {errorMessage && (
+                  <div style={{
+                    color: '#ef4444',
+                    fontSize: '16px',
+                    textAlign: 'center',
+                    marginBottom: '16px',
+                    padding: '12px',
+                    backgroundColor: '#fef2f2',
+                    borderRadius: '8px',
+                    border: '1px solid #ef4444'
+                  }}>
+                    {errorMessage}
+                  </div>
+                )}
+
+                <button 
+                  type="submit" 
+                  className={styles.submitButton}
+                  disabled={isSubmitting || isSubmitted}
+                >
+                  {isSubmitting ? (
+                    <>
+                      Sending...
+                      <svg className={styles.submitIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                      </svg>
+                    </>
+                  ) : isSubmitted ? (
+                    <>
+                      Message Sent!
+                      <svg className={styles.submitIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                      </svg>
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <svg className={styles.submitIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="m9 18 6-6-6-6"/>
+                      </svg>
+                    </>
+                  )}
                 </button>
               </form>
             </div>

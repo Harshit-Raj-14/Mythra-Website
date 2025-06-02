@@ -40,7 +40,7 @@ const Goals = () => {
       id: 2,
       icon: "🎯",
       title: "Attention to Details",
-      description: "Every pixel, every line of code, and every user interaction is carefully crafted to ensure perfection in execution.",
+      description: "Every pixel, every line of code, and every user interaction is carefully crafted to ensure perfection in execution of your big idea.",
       color: "blue"
     },
     {
@@ -71,9 +71,6 @@ const Goals = () => {
           {/* Left Content - Illustration */}
           <div className={styles.leftContent}>
             <div className={styles.header}>
-              {/* <div className={styles.badge}>
-                <span className={styles.badgeText}>🎯 Our Mission</span>
-              </div> */}
               <h2 className={styles.title}>
                 Reasons To Count On Us
               </h2>
@@ -81,6 +78,7 @@ const Goals = () => {
                 We are goal-driven in converting innovative ideas into real-life business solutions that drive success and growth.
               </p>
             </div>
+            {/* <br></br> */}
             <div className={styles.illustrationContainer}>
               {/* Main Illustration Elements */}
               <div className={styles.raceTrack}>

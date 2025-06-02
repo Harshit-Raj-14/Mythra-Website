@@ -12,25 +12,24 @@ const Testimonials = () => {
       id: 1,
       name: "Pradeep Kumar Aggarwal",
       title: "Business Owner, Kanha Enterprises",
-      image: "/images/testimonials/rajesh-kumar.jpg",
-      quote: "Mythra Global Technologies transformed our digital presence completely. Their web development team created an outstanding e-commerce platform that increased our sales by 300%. Professional, reliable, and innovative!",
+      image: "/testimonials/pradeep.jpg",
+      quote: "Mythra Global Technologies built an efficient inventory management and billing invoice generation system tailored for our pharmaceutical orthopaedic. It streamlined our operations, reduced manual errors, and improved overall productivity. Also made developed an effective sales analytics report for my business. Very helpful and Highly recommended!",
       rating: 5
     },
     {
       id: 2,
-      name: "Priya Sharma",
+      name: "Deepak Kumar Baranwal",
       title: "Baranwal Ekta Sanstha, Mumbai",
-      image: "/images/testimonials/priya-sharma.jpg",
-      quote: "The graphic design work they delivered was beyond our expectations. From our brand identity to marketing materials, everything was crafted with attention to detail. Highly recommend their creative services!",
+      image: "/testimonials/deepak.jpg",
+      quote: "Mythra Global Technologies designed a beautiful and functional website for Baranwal Ekta Sanstha, Mumbai. It perfectly showcases our community’s rich heritage, supports matrimony profiles, dharmshala bookings, and event management—all in one platform. A truly transformative digital solution for our samaj.",      
       rating: 5
     },
     {
       id: 3,
-      name: "Amit Patel",
-      title: "Director, HealthCare Plus",
-      image: "/images/testimonials/amit-patel.jpg",
-      quote: "Our mobile app project was delivered on time and within budget. The team's expertise in React Native helped us launch across both iOS and Android platforms simultaneously. Excellent communication throughout!",
-      rating: 5
+      name: "Priyanshu Kumar",
+      title: "NGO Worker",
+      image: "/testimonials/priyanshu.jpg",
+      quote: "Mythra Global Technologies created a powerful and impactful website for our NGO, Quit for Good. With features like a pledge page, seamless donation system, and integrated payment gateways, they helped us reach and engage thousands in the fight against tobacco. Their dedication truly amplified our mission.",      rating: 5
     }
   ]
 

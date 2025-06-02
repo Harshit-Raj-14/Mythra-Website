@@ -9,36 +9,29 @@ const Portfolio = () => {
   const [filteredProjects, setFilteredProjects] = useState([])
   const [isVisible, setIsVisible] = useState(false)
 
-  const filters = [
-    { id: 'ALL', label: 'ALL', count: 12 },
-    { id: 'WEB_DEVELOPMENT', label: 'WEB DEVELOPMENT', count: 5 },
-    { id: 'MOBILE_APPS', label: 'MOBILE APPS', count: 3 },
-    { id: 'GRAPHIC_DESIGN', label: 'GRAPHIC DESIGN', count: 4 }
-  ]
-
   const projects = [
     {
       id: 1,
-      title: "Pharmaceuticals Inventory Management System",
-      subtitle: "Modern Online Store",
-      description: "A complete e-commerce solution with advanced features including payment integration, inventory management, and responsive design.",
+      title: "Pharmaceuticals Inventory Management and Billing System",
+      subtitle: "Inventory and Billing Software",
+      description: "A full-fledged system to manage pharmaceutical stock, billing, and customer records with real-time updates and invoicing capabilities.",
       category: "WEB_DEVELOPMENT",
-      image: "/projects/img (1).png",
+      image: "/projects/kanha.png",
       gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       tags: ["React", "Node.js", "MongoDB"],
-      client: "TechMart Solutions",
+      client: "Kanha Enterprises",
       year: "2024"
     },
     {
       id: 2,
-      title: "Mobile Banking App",
-      subtitle: "Secure Financial Platform",
-      description: "Cross-platform mobile banking application with biometric authentication, real-time transactions, and intuitive user interface.",
-      category: "MOBILE_APPS",
-      image: "/images/projects/banking-app.jpg",
+      title: "Baranwal Ekta Sanstha - Community Website",
+      subtitle: "Non-profit Organization Portal",
+      description: "A responsive website for a community organization featuring event management, donation modules, member directories, and blog sections.",
+      category: "WEB_DEVELOPMENT",
+      image: "/projects/baranwal.png",
       gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
       tags: ["React Native", "Firebase", "Blockchain"],
-      client: "SecureBank Corp",
+      client: "Baranwal Ekta Sanstha",
       year: "2024"
     },
     {
@@ -47,7 +40,7 @@ const Portfolio = () => {
       subtitle: "Complete Visual Identity",
       description: "Comprehensive brand identity package including logo design, color palette, typography, and brand guidelines for a tech startup.",
       category: "GRAPHIC_DESIGN",
-      image: "/images/projects/brand-identity.jpg",
+      image: "/images/projects/brand-identity.png",
       gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
       tags: ["Illustrator", "Photoshop", "Branding"],
       client: "InnovateTech",
@@ -56,13 +49,13 @@ const Portfolio = () => {
     {
       id: 4,
       title: "School Management System",
-      subtitle: "Healthcare Solution",
-      description: "Comprehensive hospital management web application with patient records, appointment scheduling, and staff management features.",
+      subtitle: "Educational ERP Platform",
+      description: "A comprehensive school management system handling student records, attendance, fee payments, staff data, and academic results.",
       category: "WEB_DEVELOPMENT",
-      image: "/images/projects/hospital-system.jpg",
+      image: "/projects/school-management.png",
       gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
       tags: ["Vue.js", "Laravel", "MySQL"],
-      client: "CityHealth Hospital",
+      client: "Springfield Academy",
       year: "2024"
     },
     {
@@ -71,12 +64,34 @@ const Portfolio = () => {
       subtitle: "Digital Marketing Assets",
       description: "Creative social media graphics and promotional materials for a product launch campaign across multiple platforms.",
       category: "GRAPHIC_DESIGN",
-      image: "/images/projects/social-media-campaign.jpg",
+      image: "/images/projects/social-media-campaign.png",
       gradient: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)",
       tags: ["Social Media", "Campaigns", "Creative"],
       client: "BrandBoost Agency",
       year: "2024"
     },
+  ];
+
+
+
+  // Calculate filter counts dynamically
+  const getFilterCounts = () => {
+    const counts = {
+      ALL: projects.length,
+      WEB_DEVELOPMENT: projects.filter(p => p.category === 'WEB_DEVELOPMENT').length,
+      MOBILE_APPS: projects.filter(p => p.category === 'MOBILE_APPS').length,
+      GRAPHIC_DESIGN: projects.filter(p => p.category === 'GRAPHIC_DESIGN').length
+    }
+    return counts
+  }
+
+  const filterCounts = getFilterCounts()
+
+  const filters = [
+    { id: 'ALL', label: 'ALL', count: filterCounts.ALL },
+    { id: 'WEB_DEVELOPMENT', label: 'WEB DEVELOPMENT', count: filterCounts.WEB_DEVELOPMENT },
+    { id: 'MOBILE_APPS', label: 'MOBILE APPS', count: filterCounts.MOBILE_APPS },
+    { id: 'GRAPHIC_DESIGN', label: 'GRAPHIC DESIGN', count: filterCounts.GRAPHIC_DESIGN }
   ]
 
   useEffect(() => {

@@ -35,23 +35,11 @@ const Footer = () => {
     setIsLoading(true)
     
     try {
-      // Using EmailJS for direct email sending from frontend
-      const templateParams = {
-        to_email: 'mythra.global@gmail.com',
-        from_email: email,
-        subject: 'Newsletter Subscription Request',
-        message: `New newsletter subscription request from: ${email}\nDate: ${new Date().toLocaleString()}\n\nUser wants to subscribe to the newsletter.`
-      }
-
-      // Simple mailto approach as fallback
-      const subject = encodeURIComponent('Newsletter Subscription Request')
-      const body = encodeURIComponent(`New newsletter subscription request from: ${email}\n\nDate: ${new Date().toLocaleString()}\n\nUser wants to subscribe to the newsletter.`)
-      
-      // Create a hidden form to submit via FormSubmit.co (free service)
+      // Create form data for FormSubmit.co
       const formData = new FormData()
       formData.append('email', email)
       formData.append('subject', 'Newsletter Subscription Request')
-      formData.append('message', `New newsletter subscription from: ${email}`)
+      formData.append('message', `New newsletter subscription from: ${email}\nDate: ${new Date().toLocaleString()}\n\nUser wants to subscribe to the newsletter.`)
       formData.append('_next', window.location.href) // Redirect back to same page
       formData.append('_captcha', 'false') // Disable captcha
 
@@ -66,21 +54,11 @@ const Footer = () => {
         // Reset success message after 3 seconds
         setTimeout(() => setIsSubscribed(false), 3000)
       } else {
-        // Fallback to mailto if FormSubmit fails
-        window.location.href = `mailto:mythra.global@gmail.com?subject=${subject}&body=${body}`
-        setIsSubscribed(true)
-        setEmail('')
-        setTimeout(() => setIsSubscribed(false), 3000)
+        setErrorMessage('Failed to subscribe. Please try again later.')
       }
     } catch (error) {
       console.error('Error:', error)
-      // Fallback to mailto
-      const subject = encodeURIComponent('Newsletter Subscription Request')
-      const body = encodeURIComponent(`New newsletter subscription request from: ${email}\n\nDate: ${new Date().toLocaleString()}\n\nUser wants to subscribe to the newsletter.`)
-      window.location.href = `mailto:mythra.global@gmail.com?subject=${subject}&body=${body}`
-      setIsSubscribed(true)
-      setEmail('')
-      setTimeout(() => setIsSubscribed(false), 3000)
+      setErrorMessage('Failed to subscribe. Please try again later.')
     } finally {
       setIsLoading(false)
     }
