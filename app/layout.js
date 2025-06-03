@@ -51,7 +51,7 @@ export const metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code', // You'll get this from Google Search Console
+    google: 'uQTl66QvwzOreH93wALNb3zKxvGy_Du8S3bNTerboD8', // get this from Google Search Console - <meta name="google-site-verification" content="uQTl66QvwzOreH93wALNb3zKxvGy_Du8S3bNTerboD8" />
   },
 }
 
@@ -60,14 +60,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJ9TFBR99R"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'GA_MEASUREMENT_ID');
+              gtag('config', 'G-VJ9TFBR99R');
             `,
           }}
         />
@@ -86,7 +86,7 @@ export default function RootLayout({ children }) {
               "foundingDate": "2024",
               "founder": {
                 "@type": "Person",
-                "name": "Harshit Mythra"
+                "name": "Harshit Mythra & Priyanshu Kumar"
               },
               "sameAs": [
                 "https://www.youtube.com/@MytharaGlobalTechnologies",
