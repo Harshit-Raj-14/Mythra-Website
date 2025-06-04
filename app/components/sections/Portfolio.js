@@ -12,15 +12,16 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "Pharmaceuticals Inventory Management and Billing System",
+      title: "Orthopedics Inventory Management and Billing System",
       subtitle: "Inventory and Billing Software",
-      description: "A full-fledged system to manage pharmaceutical stock, billing, and customer records with real-time updates and invoicing capabilities.",
+      description: "A full-fledged system to manage pharmaceutical orthopedics stock, billing, and customer records with real-time updates and invoicing capabilities.",
       category: "WEB_DEVELOPMENT",
       image: "/projects/kanha.png",
       gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       tags: ["React", "Node.js", "MongoDB"],
       client: "Kanha Enterprises",
-      year: "2024"
+      year: "2025",
+      link: "https://www.canva.com/design/DAGpY7GGpPA/HBzkUeS4JEGpL1f2ZIyEJQ/view?utm_content=DAGpY7GGpPA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h09cf44222f#10" 
     },
     {
       id: 2,
@@ -32,7 +33,8 @@ const Portfolio = () => {
       gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
       tags: ["React Native", "Firebase", "Blockchain"],
       client: "Baranwal Ekta Sanstha",
-      year: "2024"
+      year: "2025",
+      link: "https://baranwalektasanstha.vercel.app/"
     },
     {
       id: 3,
@@ -44,7 +46,8 @@ const Portfolio = () => {
       gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
       tags: ["Illustrator", "Photoshop", "Branding"],
       client: "InnovateTech",
-      year: "2023"
+      year: "2024",
+      link: "https://www.canva.com/design/DAGpY7GGpPA/HBzkUeS4JEGpL1f2ZIyEJQ/view?utm_content=DAGpY7GGpPA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h09cf44222f" 
     },
     {
       id: 4,
@@ -56,7 +59,8 @@ const Portfolio = () => {
       gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
       tags: ["Vue.js", "Laravel", "MySQL"],
       client: "Springfield Academy",
-      year: "2024"
+      year: "2024",
+      link: "https://www.canva.com/design/DAGpY7GGpPA/HBzkUeS4JEGpL1f2ZIyEJQ/view?utm_content=DAGpY7GGpPA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h09cf44222f" 
     },
     {
       id: 5,
@@ -67,12 +71,11 @@ const Portfolio = () => {
       image: "/projects/social-media-campaign.png",
       gradient: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)",
       tags: ["Social Media", "Campaigns", "Creative"],
-      client: "BrandBoost Agency",
-      year: "2024"
+      client: "Quit for Good",
+      year: "2024",
+      link: "https://harshit-raj-14.github.io/Quit-For-Good/" 
     },
   ];
-
-
 
   // Calculate filter counts dynamically
   const getFilterCounts = () => {
@@ -180,7 +183,7 @@ const Portfolio = () => {
               className={`${styles.projectCard} ${isVisible ? styles.cardVisible : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Image Section - Pure image only */}
+              {/* Image Section */}
               <div className={styles.projectImageContainer}>
                 <img 
                   src={project.image} 
@@ -189,18 +192,42 @@ const Portfolio = () => {
                 />
               </div>
               
-              {/* Content Section - All details below image */}
+              {/* Content Section */}
               <div className={styles.projectContent}>
-                <div className={styles.categoryTag}>
-                  {project.category.replace('_', ' ')}
+                <div className={styles.projectHeader}>
+                  <div className={styles.categoryTag}>
+                    {project.category.replace('_', ' ')}
+                  </div>
+                  <div className={styles.projectYear}>{project.year}</div>
                 </div>
 
                 <h4 className={styles.projectTitle}>{project.title}</h4>
+                <p className={styles.projectSubtitle}>{project.subtitle}</p>
 
                 <p className={styles.projectDescription}>{project.description}</p>
 
+                {/* Client Info */}
+                <div className={styles.clientInfo}>
+                  <span className={styles.clientLabel}>Client:</span>
+                  <span className={styles.clientName}>{project.client}</span>
+                </div>
+
+                {/* Tags */}
+                {/* <div className={styles.tagsContainer}>
+                  {project.tags.map((tag, tagIndex) => (
+                    <span key={tagIndex} className={styles.tag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div> */}
+
                 <div className={styles.projectFooter}>
-                  <a href="#" className={styles.seeProjectLink}>
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={styles.seeProjectLink}
+                  >
                     See project
                     <svg className={styles.arrowIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="m9 18 6-6-6-6"/>

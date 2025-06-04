@@ -11,11 +11,11 @@
   padding-top: 80px;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .hero {
     padding-top: 0;
   }
-}
+} */
 
 /* Background Styles */
 .background {

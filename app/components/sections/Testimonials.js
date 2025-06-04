@@ -12,7 +12,7 @@ const Testimonials = () => {
       id: 1,
       name: "Pradeep Kumar Aggarwal",
       title: "Business Owner, Kanha Enterprises",
-      image: "/testimonials/pradeep.jpg",
+      image: "/testimonials/pradeep.png",
       quote: "Mythra Global Technologies built an efficient inventory management and billing invoice generation system tailored for our pharmaceutical orthopaedic. It streamlined our operations, reduced manual errors, and improved overall productivity. Also made developed an effective sales analytics report for my business. Very helpful and Highly recommended!",
       rating: 5
     },
@@ -20,15 +20,15 @@ const Testimonials = () => {
       id: 2,
       name: "Deepak Kumar Baranwal",
       title: "Baranwal Ekta Sanstha, Mumbai",
-      image: "/testimonials/deepak.jpg",
+      image: "/testimonials/deepak.png",
       quote: "Mythra Global Technologies designed a beautiful and functional website for Baranwal Ekta Sanstha, Mumbai. It perfectly showcases our community’s rich heritage, supports matrimony profiles, dharmshala bookings, and event management—all in one platform. A truly transformative digital solution for our samaj.",      
       rating: 5
     },
     {
       id: 3,
-      name: "Priyanshu Kumar",
+      name: "Arvind Kapoor",
       title: "NGO Worker",
-      image: "/testimonials/priyanshu.jpg",
+      image: "/testimonials/arvind.png",
       quote: "Mythra Global Technologies created a powerful and impactful website for our NGO, Quit for Good. With features like a pledge page, seamless donation system, and integrated payment gateways, they helped us reach and engage thousands in the fight against tobacco. Their dedication truly amplified our mission.",      rating: 5
     }
   ]

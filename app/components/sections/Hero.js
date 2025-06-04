@@ -78,14 +78,30 @@ const Hero = () => {
                 </svg>
               </Link>
               
-              <button className={styles.secondaryButton}>
-                <svg className={styles.downloadIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                  <polyline points="7,10 12,15 17,10"/>
-                  <line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
-                <span>Download Brochure</span>
-              </button>
+              <a
+                href="https://www.canva.com/design/DAGpY7GGpPA/HBzkUeS4JEGpL1f2ZIyEJQ/view?utm_content=DAGpY7GGpPA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h09cf44222f"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }} 
+              >
+                <button className={styles.secondaryButton}>
+                  <svg
+                    className={styles.downloadIcon}
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7,10 12,15 17,10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  <span>Download Brochure</span>
+                </button>
+              </a>
+
             </div>
 
             {/* Stats */}

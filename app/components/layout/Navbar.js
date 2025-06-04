@@ -200,16 +200,6 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            
-            <div className={styles.mobileCta}>
-              <Link
-                href="/contact"
-                className={styles.mobileCtaButton}
-                onClick={() => setIsOpen(false)}
-              >
-                Get Started
-              </Link>
-            </div>
           </div>
         </div>
       </div>
